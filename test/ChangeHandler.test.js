@@ -119,15 +119,12 @@ describe("ChangeHandler", function() {
     change.insertCoin("quarter");
     change.insertCoin("quarter");
     change.insertCoin("quarter");
-    change.insertCoin("quarter");
-    change.insertCoin("nickel");
-    change.insertCoin("penny");
-    change.insertCoin("penny");
+    change.insertCoin("dime");
     expect(change.giveChange()).toEqual({
-      quarters: 1,
-      dimes: 0,
-      nickels: 1,
-      pennies: 2
+      quarters: 0,
+      dimes: 1,
+      nickels: 0,
+      pennies: 0
     })
   });
 
@@ -142,13 +139,12 @@ describe("ChangeHandler", function() {
     change.insertCoin("quarter");
     change.insertCoin("quarter");
     change.insertCoin("quarter");
-    change.insertCoin("nickel");
     change.insertCoin("penny");
     change.insertCoin("penny");
     expect(change.giveChange()).toEqual({
       quarters: 1,
       dimes: 0,
-      nickels: 1,
+      nickels: 0,
       pennies: 2
     })
   });
@@ -158,21 +154,24 @@ describe("ChangeHandler", function() {
 
 
 
-  test("68 change produces: quarters: 2, dimes: 1, nickels: 1, pennies: 3.", function() {
+  test("68 change produces: quarters: 2, dimes: 1, nickels: 1, pennies: 3", function() {
     const change = new ChangeHandler(100);
     change.insertCoin("quarter");
     change.insertCoin("quarter");
     change.insertCoin("quarter");
     change.insertCoin("quarter");
     change.insertCoin("quarter");
+    change.insertCoin("quarter");
+    change.insertCoin("dime");
     change.insertCoin("nickel");
     change.insertCoin("penny");
     change.insertCoin("penny");
+    change.insertCoin("penny");
     expect(change.giveChange()).toEqual({
-      quarters: 1,
-      dimes: 0,
+      quarters: 2,
+      dimes: 1,
       nickels: 1,
-      pennies: 2
+      pennies: 3
     })
   });
 

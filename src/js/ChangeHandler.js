@@ -56,7 +56,7 @@ class ChangeHandler {
         amountBack -= 25;
         quarters ++;
       } else if (amountBack >= 10) {
-        amountBack -= 25;
+        amountBack -= 10;
         dimes++;
       } else if (amountBack >= 5) {
         amountBack -= 5;
