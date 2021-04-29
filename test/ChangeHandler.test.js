@@ -53,14 +53,16 @@ describe("ChangeHandler", function() {
 
 
   // e.
-  // test("Calling function multiple times continues to add on to the amount", function() {
-  //   const change = new ChangeHandler(1);
-  //   change.insertCoin("penny");
-  //   change.insertCoin("penny");
-  //   change.insertCoin("penny");
-  //   change.insertCoin("penny");
-  //   expect(change.cashTendered).toBe(1);
-  // });
+  test("Calling function multiple times continues to add on to the amount", function() {
+    const change = new ChangeHandler(87);
+    change.insertCoin("penny");
+    change.insertCoin("penny");
+    change.insertCoin("dime");
+    change.insertCoin("quarter");
+    change.insertCoin("quarter");
+    change.insertCoin("quarter");
+    expect(change.cashTendered).toBe(87);
+  });
 
   
   
